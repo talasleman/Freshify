@@ -1,1 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
 <h1>Dairy</h1>
+<div style="max-width: 80vw; margin: auto;">
+  <div id="products" class="d-flex flex-wrap justify-content-start">
+  <% @products.each do |product| %>
+    <div class="p-2 d-flex align-items-stretch" >
+        <%= render 'product_card', product: product %>
+      </div>
+  <% end %>
+</div>
+<br></br>
+<%= link_to "New product", new_product_path, class:"btn btn-primary"%>
+</div>

@@ -1,0 +1,29 @@
+<div id="<%= dom_id product %>">
+  <div class="card h-100 text-center p-2" style="width: 18rem;">
+  <%= image_tag(product.image_url, style: 'height: 50%; object-fit: contain; background-color: transparent;') %>
+  <hr style="margin: 0.5rem 0;">
+  <div class="card-body">
+    <h4 class="card-title">
+    <%= product.name %>
+  </h4>
+    <p class="card-text">
+      <%= product.price %>$
+    </p>
+    
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <%= button_tag "-", type: "button", class: "btn btn-success", onclick: "decrement(#{product.id})" %>
+<%= number_field_tag :quantity, 1, class: "form-control text-center", id: "quantity_#{product.id}", min: 1, style: "width: 60px;" %>
+<%= button_tag "+", type: "button", class: "btn btn-success", onclick: "increment(#{product.id})" %>
+<%= button_tag "Add to Cart", type: "button", class: "btn btn-success", onclick: "addToCart(#{product.id}, '#{product.name}')" %>
+
+      </div>
+        <%= link_to "Show product", product, class: "btn btn-outline-secondary mt-2"%>
+      </p>
+
+  </div>
+
+</div>
+
+
+
+</div>

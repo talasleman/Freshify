@@ -1,0 +1,41 @@
+
+
+<div id="<%= dom_id product %>" style="max-height: 80vh; max-width:50vw; margin: auto;">
+  <p style="color: green"><%= notice %></p>
+  <div class="card mb-3 p-3" >
+    <div class="row g-0">
+      <div class="col-12 col-md-7">
+        <%= image_tag(product.image_url, class: 'img-fluid') %>
+      </div>
+      <div class="col-12 col-md-5 px-md-3 d-flex flex-column align-items-start">
+        <div class="card-body d-flex flex-column align-items-start">
+          <h4 class="card-title">
+            <%= product.name %>
+          </h4>
+          <p class="card-text"><small class="text-body-secondary"><%= product.description %></small></p>
+          <div class="btn-group flex-wrap" role="group" aria-label="Basic example">
+          <%= button_tag "-", type: "button", class: "btn btn-success", onclick: "decrement()" %>
+          <%= number_field_tag :quantity, 1, class: "form-control text-center", id: "quantity", min: 1, style: "width: 60px;" %>
+          <%= button_tag "+", type: "button", class: "btn btn-success", onclick: "increment()" %>
+          <%= button_tag "Add to Cart", type: "button", class: "btn btn-success", onclick: "addToCart()" %>
+          </div>
+          <div class="mt-auto">
+            <div class="mb-2">
+              <%= link_to "Edit this product", edit_product_path(@product), class:"btn btn-outline-secondary mr-2"%> 
+            </div>
+            <div>
+            <%= button_to "Delete this product", @product, method: :delete, class:"btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div>
+ 
+  <%= link_to "Back to products", products_path, class:"btn btn-secondary"%>
+
+</div>
+  
+</div>

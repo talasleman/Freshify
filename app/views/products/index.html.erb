@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Vegetables</h1>
+<h1>Products</h1>
 <div style="max-width: 80vw; margin: auto;">
   <div id="products" class="d-flex flex-wrap justify-content-start">
   <% @products.each do |product| %>
@@ -12,3 +12,5 @@
 <br></br>
 <%= link_to "New product", new_product_path, class:"btn btn-primary"%>
 </div>
+
+
